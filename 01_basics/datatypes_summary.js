@@ -14,7 +14,7 @@ const anotherid=Symbol('123')
 const bignumber=979749217917979n 
 //bigint
 
-//preference/non-primitive
+//reference/non-primitive
 
 //call by reference
 
