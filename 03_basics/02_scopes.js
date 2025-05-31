@@ -65,6 +65,7 @@ addTwo(5); // ❌ This will throw an error: Cannot access 'addTwo' before initia
 const addTwo = function(num) {
     return num + 1;
 };
+//both are functions but second one can be called expression 
 
 // Explanation:
 // In JavaScript, function declarations are hoisted to the top of their scope,
