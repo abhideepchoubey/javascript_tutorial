@@ -45,6 +45,21 @@ myCoding.forEach( (item) => {
     console.log(item.languageName);
 } )
 
-const myarraymap=[
-    
-]
+const arr = [
+    new Map([
+        ["name", "Alice"],
+        ["age", 25]
+    ]),
+    new Map([
+        ["name", "Bob"],
+        ["age", 30]
+    ])
+];
+
+// Loop through each Map in the array
+arr.forEach(map => {
+    // For each Map, you can loop through its entries (key-value pairs)
+    map.forEach((value, key) => {
+        console.log(`${key}: ${value}`);
+    });
+});
