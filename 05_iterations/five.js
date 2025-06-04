@@ -26,6 +26,7 @@ function printMe(item) {
 //     console.log(item, index, arr);
 // } )
 
+
 const myCoding = [
     {
         languageName: "javascript",
