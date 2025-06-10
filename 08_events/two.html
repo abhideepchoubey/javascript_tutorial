@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayabhi=function(){
+        console.log("Abhi");
+    } 
+    // setTimeout(function(){
+    //     console.log("Abhi");
+    // },2000)
+    setTimeout(sayabhi,2000)
+    //giving functions reference
+    //time is in miliseconds
+    //also calls the api
+    const changetext=function(){
+        document.querySelector('h1').textContent="best JS series"
+    }
+    const changeMe=setTimeout(changetext,2000)
+    //how to stop this ?
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)
+        console.log("stopped");
+        
+    })
+    setInterval()
+    //repeats the thing after particular interval
+</script>
+</html>

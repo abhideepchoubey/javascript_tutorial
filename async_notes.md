@@ -65,6 +65,7 @@ Note: The event loop, task queue, and microtask queue are what enable JavaScript
  ![alt text](image.png)
 
 -Register Callback: Web APIs (like setTimeout, fetch, etc.) register the event and start processing based on the conditions you’ve given.
+
 -Task Queue: Once the task (like timer or HTTP response) finishes, its callback is placed in the task queue.
 -Call Stack: When the stack is empty, the event loop pushes callbacks from the task queue into the call stack for execution.
 -Promise Queue (a.k.a. Microtask Queue):
