@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub Card</title>
+</head>
+<body style="background-color:#212212; color:aliceblue; text-align:center; display:flex; flex-direction:column; align-items:center;">
+    <button id="card" style="background-color: aqua; padding: 10px 20px; font-size: 16px; margin-top: 20px;">
+        Click here to access the card of hiteshchoudhary
+    </button>
+
+    <script>
+        document.getElementById('card').addEventListener('click', function () {
+            const requestURL = 'https://api.github.com/users/hiteshchoudhary';
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', requestURL);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const data = JSON.parse(this.responseText);
+
+                    const card = document.createElement('div');
+                    card.style.backgroundColor = '#333';
+                    card.style.padding = '20px';
+                    card.style.margin = '20px auto';
+                    card.style.width = '260px';
+                    card.style.borderRadius = '10px';
+                    card.style.boxShadow = '0 4px 8px rgba(0,0,0,0.3)';
+
+                    const img = document.createElement('img');
+                    img.src = data.avatar_url;
+                    img.alt = 'GitHub Avatar';
+                    img.style.width = '100%';
+                    img.style.borderRadius = '10px';
+                    card.appendChild(img);
+
+                    const followers = document.createElement('h2');
+                    followers.textContent = `Followers: ${data.followers}`;
+                    followers.style.marginTop = '15px';
+                    card.appendChild(followers);
+
+                    document.body.appendChild(card);
+                }
+            };
+            xhr.send();
+        });
+    </script>
+</body>
+</html>

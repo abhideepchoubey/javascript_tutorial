@@ -1,0 +1,88 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    // UTF-8 supports most characters from all languages and symbols
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    //Makes your page responsive: scales properly on mobile and desktop 
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">-->
+    <!-- Information about readyState values for XMLHttpRequest -->
+    <!-- 0	UNSENT	Client has been created. open() not called yet.<br>
+    1	OPENED	open() has been called.<br>
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.<br>
+    3	LOADING	Downloading; responseText holds partial data.<br>
+    4	DONE	The operation is complete.<br> -->
+<!-- </body>
+
+<script>
+    // Define the API endpoint from GitHub to get user data
+    const requestURL = 'https://api.github.com/users/hiteshchoudhary';
+    //hard coded string
+
+    // Create an instance of XMLHttpRequest
+    const xhr = new XMLHttpRequest(); // Making an object to interact with servers -->
+
+    // Configure it: 'GET' request to the URL (does not send yet)
+    xhr.open('GET', requestURL);
+    //requires method & string basically
+    // open() initializes the request, setting the method and URL.
+    // open() must be called before send().
+    // GET is used to fetch data; other methods include POST, PUT, DELETE.
+
+    // Set up a function that will run whenever the readyState changes
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        // readyState helps track the state of the request
+        // Will log numbers 0 to 4 representing various stages of the request
+
+        if (xhr.readyState === 4) {
+            // 4 means DONE — the operation is complete and we have a response
+
+            // 'this.responseText' holds the raw response as a string
+            const data = JSON.parse(this.responseText);
+            // JSON.parse() converts that string into a JavaScript object
+
+            console.log(data.followers); // Accessing a specific property (number of followers)
+        }
+
+        // Most API responses come as stringified JSON (JavaScript Object Notation)
+        // So parsing is necessary to access data like properties, arrays, etc.
+    };
+
+    xhr.send(); // Actually sends the request to the server
+
+    // Note: send() must be called after open()
+    // Without send(), the request won't be sent
+
+<!-- </script>
+
+<!-- </html> 
+
+console.log is a debugging tool:
+- It is NOT part of the JavaScript core language.
+- It is provided by browser engines (like V8 in Chrome) to help developers debug.
+- This is part of the Web APIs, not the JS language spec itself.
+
+🧠 JavaScript as a "Wrapper":
+
+- JavaScript is a **high-level, interpreted language** designed to be easy for humans to write and read.
+- But computers don’t directly understand JavaScript; they understand **machine code** (binary instructions).
+
+- To run JavaScript in the browser, it's passed to an engine like **V8 (Chrome)** or **SpiderMonkey (Firefox)**.
+  These engines are written in **C++**, which interacts with the operating system and hardware.
+
+- JavaScript is considered a **wrapper** because:
+  1. It gives developers access to complex operations (like memory management, networking, rendering) **without** exposing the low-level details.
+  2. It wraps around **system-level code** (like C++) to provide a safer and more abstracted interface.
+  3. The browser exposes **Web APIs** (like DOM, Fetch, XMLHttpRequest, console) that JavaScript can use, but these APIs themselves are implemented in lower-level languages.
+
+🧵 Real-world analogy:
+- Think of JavaScript as the remote control (easy to use), and C++ as the circuit inside the TV.
+  You don’t need to know how electricity works — you press a button and magic happens — because JS wraps that complexity.
+
+🔧 Example:
+- When you call console.log() in JS:
+    - You’re **not using pure JavaScript**.
+    - You’re actually triggering a C++ method inside the browser engine that displays text in the DevTools. -->
